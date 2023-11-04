@@ -1,0 +1,26 @@
+---
+title: "Homework 6"
+author: "Ben Pfingston, Leah Peterson, and Alexus Rock"
+format: pdf
+editor: visual
+fig-width: 6.5
+fig-height: 8
+execute:
+  echo: FALSE
+---
+
+##Loading
+
+```{r}
+#loading in packages
+
+library(tidyverse)
+library(rio)
+library(here)
+```
+
+```{r}
+#loading in data
+
+star <- import(here("data", "star.csv"))
+```
