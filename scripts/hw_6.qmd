@@ -43,7 +43,24 @@ star %>%
 
 ```
 
-This is a table of the summary statistics for mean math score, standard deviation of math score, mean reading score, and standard deviation of reading score by sex and if free reduced lunch (frl) is received.
+This is a table of the summary statistics for the mean of total math score, the standard deviation of total math score, the mean of total reading score, and the standard deviation of total reading score by sex and by if free reduced lunch (frl) is received.
+
+\newpage
+
+```{r}
+
+ggplot(star, aes(totexp, tmathss)) +
+  geom_point(color = "grey", size = 0.5) +
+  geom_smooth(aes(color = frl), method = "lm") +
+  labs(x = "Teacher Experience (years)",
+       y = "Total Math Scale Score",
+       title = "Relation between teacher experience and math scores",
+       subtitle = "Separate regression lines displayed by free/reduced lunch price status")
+
+
+```
+
+This is a plot of the relationship between teacher experience and student math scores for students who receive free/reduced lunch and those that do not.
 
 \newpage
 
