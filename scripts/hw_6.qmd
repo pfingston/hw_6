@@ -7,9 +7,9 @@ fig-width: 6.5
 fig-height: 8
 execute:
   echo: FALSE
+warning: FALSE
+bibliography: hw6_bib.bib
 ---
-
-##Loading
 
 ```{r}
 #loading in packages
@@ -17,6 +17,7 @@ execute:
 library(tidyverse)
 library(rio)
 library(here)
+library(ggplot2)
 ```
 
 ```{r}
@@ -24,3 +25,9 @@ library(here)
 
 star <- import(here("data", "star.csv"))
 ```
+
+We are using R for this assignment [@rcite]. To import the data, @herecite created a package that helps us find the file we want to use in the assignment. Additionally, we are using the tidyverse to help organize our data [@tidycite]. Then, to create the figure, @ggcite made a comprehensive package that allows us to make graphs and figures with multiple different formating options.
+
+\newpage
+
+# References
