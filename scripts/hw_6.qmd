@@ -18,6 +18,7 @@ library(tidyverse)
 library(rio)
 library(here)
 library(ggplot2)
+library(knitr)
 ```
 
 ```{r}
@@ -27,6 +28,22 @@ star <- import(here("data", "star.csv"))
 ```
 
 We are using R for this assignment [@rcite]. To import the data, @herecite created a package that helps us find the file we want to use in the assignment. Additionally, we are using the tidyverse to help organize our data [@tidycite]. Then, to create the figure, @ggcite made a comprehensive package that allows us to make graphs and figures with multiple different formating options.
+
+\newpage
+
+```{r}
+star %>% 
+  group_by(sex, frl) %>% 
+  summarize(math_mean = mean(tmathss, na.rm = TRUE),
+            math_sd = sd(tmathss, na.rm = TRUE),
+            rdg_mean = mean(treadss, na.rm = TRUE),
+            rdg_sd = sd(treadss, na.rm = TRUE)) %>% 
+  kable(digits = 2)
+
+
+```
+
+This is a table of the summary statistics for mean math score, standard deviation of math score, mean reading score, and standard deviation of reading score by sex and if free reduced lunch (frl) is received.
 
 \newpage
 
